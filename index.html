@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Music Player</title>
+  <link rel="shortcut icon" href="images/logo.avif" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="player">
+    <p class="eyebrow"><span class="dot" id="liveDot"></span>Now Spinning</p>
+
+    <div class="top">
+      <div class="turntable">
+        <div class="tonearm" id="tonearm">
+          <svg viewBox="0 0 74 74">
+            <g fill="none" stroke="#9c8aa0" stroke-width="3" stroke-linecap="round">
+              <line x1="66" y1="8" x2="14" y2="58" />
+              <circle cx="66" cy="8" r="6" fill="#241a29" stroke="#e8a33d" />
+            </g>
+          </svg>
+        </div>
+        <div class="platter" id="platter">
+          <div class="label"></div>
+        </div>
+      </div>
+
+      <div class="track-info">
+        <p class="song-title" id="songTitle">—</p>
+        <p class="song-artist">by <strong id="songArtist">—</strong></p>
+
+        <div class="progress-row">
+          <span id="curTime">0:00</span>
+          <div class="bar-track" id="barTrack">
+            <div class="bar-fill" id="barFill"></div>
+            <div class="bar-thumb" id="barThumb"></div>
+          </div>
+          <span id="durTime">0:00</span>
+        </div>
+
+        <div class="controls-row">
+          <div class="transport">
+            <button class="btn" id="prevBtn" aria-label="Previous track">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
+              </svg>
+            </button>
+            <button class="btn play-pause" id="playBtn" aria-label="Play">
+              <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+            <button class="btn" id="nextBtn" aria-label="Next track">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="aux">
+            <div class="vol-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2A4.5 4.5 0 0 0 14 7.97v8.05A4.5 4.5 0 0 0 16.5 12z" />
+              </svg>
+              <input type="range" class="vol" id="volSlider" min="0" max="100" value="70">
+            </div>
+            <button class="toggle" id="autoplayToggle" aria-pressed="true">Autoplay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="playlist">
+      <div class="playlist-head">
+        <h2>Playlist</h2>
+        <span id="playlistCount">0 tracks</span>
+      </div>
+      <div id="playlistItems"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
